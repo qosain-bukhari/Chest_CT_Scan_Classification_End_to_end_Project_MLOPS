@@ -1,64 +1,103 @@
-
 # End-to-End Chest Cancer Deep Learning Image Classification
 
 ## Project Overview
-This project is an end-to-end deep learning image classification system for chest cancer detection. The goal is to build a complete, production-ready pipeline starting from project setup to deployment using MLOps best practices.
+
+This project implements a comprehensive, end-to-end deep learning pipeline for chest cancer detection using CT scan images. It is designed with production-ready practices and integrates MLOps workflows to ensure reproducibility, scalability, and maintainability.
 
 ---
 
-## Step 1: Project overview
+## Step 1: Project Workflow
+
+The project follows a structured workflow to cover all stages from initialization to deployment:
 
 ```bash
-Project Introduction
-GitHub Repository Setup
-Project Template Creation
-Project Setup & Environment Installation
-Logging Utilities & Custom Exception Module
-Project Flow & Workflow Design
-Component-wise Notebook Experiments
-Component-wise Modular Code Implementation
-Training Pipeline Development
-MLflow (MLOps-1): Experiment Tracking & Model Registration
-DVC (MLOps-2): Pipeline Tracking & Versioning
-Prediction Pipeline Development
-User Application Creation
-Dockerization
+1. Project Introduction & Objective
+2. GitHub Repository Setup
+3. Project Template Creation
+4. Project Environment Setup & Dependency Installation
+5. Logging & Custom Exception Module Implementation
+6. Project Flow & Workflow Design
+7. Component-wise Notebook Experiments
+8. Component-wise Modular Code Implementation
+9. Training Pipeline Development
+10. MLflow Integration for Experiment Tracking & Model Registration
+11. DVC Integration for Pipeline Tracking & Versioning
+12. Prediction Pipeline Development
+13. User Application Development
+14. Dockerization & Container Deployment
 ```
 
-## Step 2: Github Repositary
-``` bash 
-GitHub Repository Setup
-Initialized Git repository
-Added .gitignore
-Created .github/workflows/ for future CI/CD
-Structured code under src/ for scalability
+---
+
+## Step 2: Environment Setup
+
+```bash
+# Create and activate Conda environment
+conda create -n chest_cancer_dl python=3.13.11 -y
+conda activate chest_cancer_dl
+
+# Install project dependencies
+pip install -r requirements.txt
+pip install -e .
 ```
 
+---
 
-## Step 3: Project Structure 
-``` bash 
-src/ProjectName/ → Core source code
-components/ → Data ingestion, preprocessing, training, evaluation
-pipelines/ → Training and prediction pipelines
-utils/ → Common utilities, logging, helpers
-entitys/ → Artifact and configuration entities
-constants/ → Constant values
-config/ → Configuration management
-config/config.yaml → Project paths and settings
-params.yaml → Model parameters
-dvc.yaml → DVC pipeline stages
-research/trials.ipynb used for notebook-based experiments before modular coding
-main.py → Main training execution file
-templates/index.html → Frontend template for prediction app
-```
-``` bash
-Tools & Technologies (Planned)
-Python
-Deep Learning (CNN)
-MLflow (Experiment Tracking & Model Registry)
-DVC (Pipeline & Data Versioning)
-Docker
-CI/CD (AWS & Azure)
+## Step 3: GitHub Repository
+
+```bash
+# Repository Initialization
+git init
+# Add .gitignore
+# Setup CI/CD workflows in .github/workflows/
+# Organize code under src/ directory for modularity and scalability
 ```
 
+---
+
+## Step 4: Project Structure
+
+```bash
+src/ProjectName/ → Core project code
+components/ → Data ingestion, preprocessing, model training & evaluation modules
+pipelines/ → Training and prediction pipeline scripts
+utils/ → Common utility functions, logging, helper methods
+entitys/ → Data and configuration entities for modular pipelines
+constants/ → Project-wide constants
+config/ → Configuration files management
+config/config.yaml → Configuration for paths and settings
+params.yaml → Model hyperparameters
+dvc.yaml → DVC pipeline stages for reproducibility
+research/trials.ipynb → Notebook experiments for initial model development
+main.py → Entry point for pipeline execution
+templates/index.html → Frontend template for prediction application
+```
+
+---
+
+## Step 5: Tools & Technologies
+
+```bash
+Python 3.13.11
+Deep Learning (TensorFlow, Keras)
+MLflow for experiment tracking and model registry
+DVC for data and pipeline versioning
+Streamlit/Flask for user application
+Docker for containerization
+CI/CD deployment on AWS & Azure
+```
+
+---
+
+## Step 6: setup file ,logging and Utiles 
+```bash
+✔ Requirements and setup.py configured
+✔ Centralized logging implemented
+✔ Common utility helper functions added
+```
+
+## Step 6: project workflow
+```bash
+
+```
 

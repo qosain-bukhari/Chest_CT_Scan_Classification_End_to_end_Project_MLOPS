@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+env/
+venv/
+
+# Conda
+*.conda
+.conda/
+
+# Logs
+logs/
+*.log
+
+# Artifacts
+artifacts/
+
+# DVC
+.dvc/cache
+.dvc/tmp
+
+# MLflow
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Docker
+*.tar
