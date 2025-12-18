@@ -98,6 +98,14 @@ CI/CD deployment on AWS & Azure
 
 ## Step 6: project workflow
 ```bash
+update config.yml
+update params.yml
+update the entity
+update the configuration manager in src config
+update the components
+update pipeline
+update main.py
+update the dvc.yml
 
 ```
 
