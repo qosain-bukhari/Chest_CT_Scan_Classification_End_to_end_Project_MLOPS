@@ -1,0 +1,26 @@
+# Core libraries
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+gdown
+pillow
+python-box
+ensure
+# Deep Learning
+tensorflow
+keras
+# MLOps
+mlflow
+dvc
+# Web & App
+streamlit
+flask
+# Others
+pyyaml
+tqdm
+joblib
+Flask-Cors
+logging
+-e .
