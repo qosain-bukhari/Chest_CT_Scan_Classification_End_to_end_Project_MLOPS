@@ -1,4 +1,4 @@
-﻿# Chest_CT_Scan_Classification_End_to_end_Project_MLOPS
+
 # End-to-End Chest Cancer Deep Learning Image Classification
 
 ## Project Overview
@@ -60,4 +60,5 @@ DVC (Pipeline & Data Versioning)
 Docker
 CI/CD (AWS & Azure)
 ```
+
 
