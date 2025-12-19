@@ -21,3 +21,19 @@ class BaseModelConfig:
     params_classes: int
     params_weights: str
     params_include_top: bool
+
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    """
+    Configuration for model training
+    """
+    root_dir: Path
+    trained_model_path: Path
+    updated_base_model_path: Path
+    training_data: Path
+    params_epochs: int
+    params_batch_size: int
+    params_image_size: list
+    params_is_augmentation: bool
+    params_learning_rate: float

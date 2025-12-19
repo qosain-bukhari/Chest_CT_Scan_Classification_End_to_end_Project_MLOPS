@@ -22,7 +22,8 @@ class PrepareBaseModel:
         return base_model
 
     @staticmethod
-    def _prepare_full_model(model, classes, learning_rate, freeze_all, freeze_till):
+    def _prepare_full_model(model, classes, learning_rate, freeze_all, freeze_till, dropout_rate=0.5):
+        # Freeze layers
         if freeze_all:
             for layer in model.layers:
                 layer.trainable = False
@@ -33,13 +34,15 @@ class PrepareBaseModel:
             for layer in model.layers:
                 layer.trainable = True
 
-        flatten_in = tf.keras.layers.Flatten()(model.output)
-        prediction = tf.keras.layers.Dense(
-            units=classes,
-            activation="softmax"
-        )(flatten_in)
+        # Add classification head with Dropout
+        x = tf.keras.layers.Flatten()(model.output)
+        x = tf.keras.layers.Dropout(dropout_rate)(x)   # ✅ Dropout added
+        prediction = tf.keras.layers.Dense(units=classes, activation="softmax")(x)
 
+        # Create full model
         full_model = tf.keras.models.Model(inputs=model.input, outputs=prediction)
+
+        # Compile model
         full_model.compile(
             optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
             loss="categorical_crossentropy",
@@ -49,6 +52,7 @@ class PrepareBaseModel:
         full_model.summary()
         return full_model
 
+
     def update_base_model(self):
         # Prepare the updated model
         self.full_model = self._prepare_full_model(
@@ -56,7 +60,8 @@ class PrepareBaseModel:
             classes=self.config.params_classes,
             learning_rate=self.config.params_learning_rate,
             freeze_all=True,
-            freeze_till=None
+            freeze_till=None,
+             dropout_rate=0.5  
         )
 
         # Save the updated model
