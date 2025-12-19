@@ -5,7 +5,7 @@ __version__ = "0.0.1"
 
 REPO_URL = "Chest_CT_Scan_Classification_End_to_end_Project_MLOPS"
 AUTHOR = "qosain-bukhari"
-SRC_REPO="Cnnclassificatier"
+SRC_REPO="Cnnclassifier"
 DESCRIPTION = "Chest CT Scan Classification using Deep Learning with MLOps practices"
 AUTHOR_EMAIL = "bukhariqosain824@gmail.com"
 
