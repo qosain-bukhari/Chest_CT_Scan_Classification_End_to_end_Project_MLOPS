@@ -58,19 +58,22 @@ git init
 ## Step 4: Project Structure
 
 ```bash
-src/ProjectName/ → Core project code
-components/ → Data ingestion, preprocessing, model training & evaluation modules
-pipelines/ → Training and prediction pipeline scripts
-utils/ → Common utility functions, logging, helper methods
-entitys/ → Data and configuration entities for modular pipelines
-constants/ → Project-wide constants
-config/ → Configuration files management
-config/config.yaml → Configuration for paths and settings
-params.yaml → Model hyperparameters
-dvc.yaml → DVC pipeline stages for reproducibility
-research/trials.ipynb → Notebook experiments for initial model development
-main.py → Entry point for pipeline execution
-templates/index.html → Frontend template for prediction application
+.
+├── artifacts/          # Data, models, and evaluation results (DVC tracked)
+├── config/             # Configuration files (config.yaml)
+├── model/              # Local directory for saved trained models
+├── research/           # Jupyter notebooks for trials
+├── src/                # Source code
+│   └── cnnClassifier/
+│       ├── components/ # Modular steps (Ingestion, Training, etc.)
+│       ├── config/     # Configuration Manager
+│       ├── entity/     # Data classes (Config Entities)
+│       ├── pipeline/   # Stage-wise pipelines
+│       └── utils/      # Helper functions (logging, common utils)
+├── app.py              # Flask Application
+├── dvc.yaml            # DVC Pipeline definition
+├── main.py             # Entry point for the pipeline
+└── params.yaml         # Hyperparameters (Epochs, Batch size, etc.)
 ```
 
 ---
@@ -126,4 +129,5 @@ dvc dag
  user application using flask
  app.py
  
+
  ```
