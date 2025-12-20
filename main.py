@@ -11,7 +11,16 @@ dagshub.init(
     mlflow=True
 )
 
-  
+
+STAGE_NAME = "Data Ingestion stage"
+try:
+    logger.info(f">>>>>> stage {stage_01.STAGE_NAME} started <<<<<<")
+    obj = DataIngestionTrainingPipeline()
+    obj.data_ingestion_pipeline()
+    logger.info(f">>>>>> stage {stage_01.STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(f"Error in Training Pipeline: {e}")
+    raise e
 
 
 

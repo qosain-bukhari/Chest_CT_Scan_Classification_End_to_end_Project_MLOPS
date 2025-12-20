@@ -21,7 +21,7 @@ class EvaluationPipeline:
             evaluator = Evaluation(eval_config)
             evaluator.evaluate_model()
             evaluator.save_score()
-            evaluator.log_into_mlflow()
+            # evaluator.log_into_mlflow()
             logger.info("Model Evaluation Pipeline completed successfully")
         except Exception as e:
             logger.exception(e)
