@@ -37,3 +37,15 @@ class ModelTrainingConfig:
     params_image_size: list
     params_is_augmentation: bool
     params_learning_rate: float
+
+from dataclasses import dataclass
+from pathlib import Path
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_url:str
+    params_image_size: list
+    params_batch_size: int
